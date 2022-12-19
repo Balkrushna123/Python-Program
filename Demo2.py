@@ -1,7 +1,4 @@
+def fun():    # function defination
+  print("Inside Demo 2")
 
-def fun():  # function defination
-    print("Inside Demo 2")
-
-fun()       # function call
-
-    
+fun()     # function call
