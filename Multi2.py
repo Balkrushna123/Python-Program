@@ -1,17 +1,21 @@
 import os
 
 def Fun():
-    print("PID is : ",os.getpid())
-    print("Inside fun")
+	print("PID is:",os.getpid())
+	print("Inside fun")
+	for i in range(5):
+		print("Fun:",i)
 
 def Gun():
-    print("PID is : ",os.getpid())
-    print("Inside gun")
+	print("PID is:",os.getpid())
+	print("Inside gun")
+	for i in range(5):
+		print("Gun:",i)
 
 def main():
-    print("PID is : ",os.getpid())
-    Fun()
-    Gun()
-    
-if __name__ == "__main__":
-    main()
+	print("PID is:",os.getpid())
+	Fun()
+	Gun()
+
+if __name__=="__main__":
+	main()

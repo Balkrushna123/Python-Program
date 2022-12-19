@@ -1,38 +1,39 @@
+# multithreading
+# ratri chi arati example(ekani sagala kam karane)
+
 import os
-import  threading
+import threading
 
 def Fun(X):
-    print("PID of Fun is : ",os.getpid())   # 1000
-    print("PPID of Fun : ",os.getppid())    # 3300
-    print("Thread name of fun : ",threading.current_thread().name)
-    print("Inside fun")
-    print("Inside fun")
-    for i in range(X):
-        print("Fun : ",i)
+	print("PID of Fun is:",os.getpid())
+	print("PPID of Fun is:",os.getppid())
+	print("Inside fun")
+	for i in range(X):
+		print("Fun:",i)
 
 def Gun(X):
-    print("PID of Gun is : ",os.getpid())   # 1000
-    print("PPID of Gun : ",os.getppid())    # 3300
-    print("Thread name of gun : ",threading.current_thread().name)
-    print("Inside gun")
-    for i in range(X):
-        print("Gun : ",i)
+	print("PID of Gun is:",os.getpid())
+	print("PPID of Gun:",os.getppid())
+	print("Inside gun")
+	for i in range(X):
+		print("Gun:",i)
 
-def main():             # 1000
-    No = 5
-    print("PID of parent process : ",os.getpid())   # 1000
-    print("Thread name of main is : ",threading.current_thread().name)
+def main():
+	No=5
+	print("RID of parent process:",os.getpid())
 
-    thread1 = threading.Thread(target = Fun, args = (No,), name = 'FunThread')
-    thread2 = threading.Thread(target = Gun, args = (No,), name = 'GunThread')
+	print("Thread name of main is:",threading.current_thread().name)
 
-    thread1.start()
-    thread2.start()
+	thread1=threading.Thread(target=Fun,args=(No,),name='FunThread')
+	thread2=threading.Thread(target=Gun,args=(No,),name='GunThread')
+	
+	thread1.start()
+	thread2.start()
 
-    thread1.join()
-    thread2.join()
-    
-    print("End of main")
-    
-if __name__ == "__main__":
-    main()
+	thread1.join()
+	thread2.join()
+
+	print("End of main")
+
+if __name__=="__main__":
+	main()

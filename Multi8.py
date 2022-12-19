@@ -1,8 +1,9 @@
+# cores display my laptop
 import os
-import  multiprocessing
+import multiprocessing
 
 def main():
-    print("Number of cores : ",multiprocessing.cpu_count())
+	print("Number of cores:",multiprocessing.cpu_count())
 
-if __name__ == "__main__":
-    main()
+if __name__=="__main__":
+	main()
